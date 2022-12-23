@@ -13,7 +13,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1.1
     
     - name: Build dll for release
-      run: msbuild ide/vs2019/mimalloc.vcxproj -t:rebuild -verbosity:diag -property:Configuration=Release -property:OutDir=c:\out
+      run: msbuild ide/vs2019/mimalloc-override.vcxproj -t:rebuild -verbosity:diag -property:Configuration=Release -property:OutDir=c:\out
     
     - name: Check out dir
       run: dir c:\out
