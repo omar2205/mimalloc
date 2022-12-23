@@ -13,7 +13,7 @@ jobs:
       uses: microsoft/setup-msbuild@v1.1
     
     - name: Build dll for release
-      run: msbuild ide/vs2019/mimalloc-override.vcxproj -t:rebuild -verbosity:diag -property:Configuration=Release -property:OutDir=c:\out
+      run: msbuild ide/vs2019/mimalloc-override.vcxproj -property:OutDir=c:\out
     
     - name: Saving build files
       uses: actions/upload-artifact@v3
