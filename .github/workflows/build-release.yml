@@ -1,0 +1,12 @@
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v1.1
+    
+    - name: Build dll for release
+      run: msbuild ide/vs2019/mimalloc.vcxproj -t:rebuild -verbosity:diag -property:Configuration=Release
